@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/FoodDB')
+require('dotenv').config()
+// mongoose.connect(process.env.DatabaseLocal_URL)  this is a local database storage 
+mongoose.connect(process.env.Database_URL)     // this is online database storage
 
 const Db = mongoose.connection;
 
