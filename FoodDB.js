@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
-mongoose.connect(process.env.Database_URL)
+const options = {
+    ssl: true, // Enforce SSL connection
+    retryWrites: true,  // Retry write operations if they fail
+};
+mongoose.connect(process.env.Database_URL, options)
 
 const Db = mongoose.connection;
 
@@ -12,7 +16,7 @@ Db.on('error', (err) => {
     console.log("server error : ", err);
 })
 
-Db.on('disconnected', ()=>{
+Db.on('disconnected', () => {
     console.log("server disconnected");
 })
 
