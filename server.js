@@ -13,7 +13,7 @@ app.use(bodyparser.json())
 app.use(cors());
 
 app.get('/app', (req, res) => {
-    res.send("The base URl is : http://localhost:3000/app")
+    res.send("The base URl is : https://server-side-food-app.onrender.com/app")
 })
 
 app.use('/app/food', Foodrouter)
