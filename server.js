@@ -10,7 +10,11 @@ const CategoryRouter = require('./Routes/CategoryRoutes')
 const AddressRouter = require('./Routes/AddressRoutes')
 
 app.use(bodyparser.json())
-app.use(cors());
+app.use(cors({
+    origin: 'https://client-side-food-app.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    credentials: true,
+  }));
 
 app.get('/app', (req, res) => {
     res.send("The base URl is : https://server-side-food-app.onrender.com/app")
