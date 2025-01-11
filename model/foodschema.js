@@ -8,5 +8,5 @@ const Foodmodel = new mongoose.Schema({
     type: { type: String, required: true }
 })
 
-const Food = mongoose.model('Food', Foodmodel)
-module.exports = Food
+const Foods = mongoose.model('Foods', Foodmodel)
+module.exports = Foods
