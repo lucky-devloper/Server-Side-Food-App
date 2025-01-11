@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 const options = {
-    ssl: true, // Enforce SSL connection
     retryWrites: true,  // Retry write operations if they fail
 };
 mongoose.connect(process.env.Database_URL, options)
