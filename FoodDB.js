@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
-mongoose.connect(process.env.Database_URL, { useNewUrlParser: true, useUnifiedTopology: true })     // this is online database storage
+mongoose.connect(process.env.Database_URL)     // this is online database storage
 
 const Db = mongoose.connection;
 
